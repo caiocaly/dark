@@ -10,12 +10,16 @@
 
 <body>
 
+<!--
+Um teste com tooltips(tem no css tb)
 <div class="tooltip">Hover over me
   <span class="tooltiptext">Tooltip text</span>
 </div>
+-->
 
-<div header>
-	<h1>Título do jogo</h1>
+
+<div>
+<h1 id="header"></h1>
 </div>
   <div id="descriptionDiv"></div> 
   <div id="answersDiv"></div>
@@ -30,10 +34,12 @@ Os objetos do array answers possuem três atributos: title (nome que será impre
 */
 
 { // index 0 - quarto escuro
+    "title": "Escuridão",
+
     "description": "Você se percebe de pé num quarto absolutamente escuro. A última coisa de que se lembra é de ter apagado as luzes para ir dormir, mas de alguma maneira isso parece uma memória distante." +
-    "Algo faz você se sentir que não está em casa... " +
-    "<br><br>" + 
-    " Você se dá conta que seu braço está estendido e seu dedo sobre o interruptor.",
+        "Algo faz você se sentir que não está em casa... " +
+        "<br><br>" + 
+        " Você se dá conta que seu braço está estendido e seu dedo sobre o interruptor.",
 
     "answers": [{
       "title": "Ligar as luzes",
@@ -46,6 +52,8 @@ Os objetos do array answers possuem três atributos: title (nome que será impre
     }]
 
   }, { // index 1  - quarto claro
+    "title": "Quarto",
+
     "description": "É o seu quarto. Ele está bem arrumadinho, até a cama está feita. É pequeno, mas aconchegante..." + 
     "Olhar pra ele assim com atenção faz você lembrar de como gosta dele... Mas também parece que tem alguma coisa errada, mesmo que você não saiba exatamente o quê é...",
     
@@ -74,9 +82,11 @@ Os objetos do array answers possuem três atributos: title (nome que será impre
       "add" : ""
     }]
      },{
-     	//index 2 - banheiros
+     	//index 2 - banheiro
+     	"title": "Banheiro",
+
      	"description": "Você entra no seu banheiro e fecha a porta." +
-     	"<br> Você costuma brincar que é um banheiro minimalista, que só existe pra poder chamar o quarto de suíte. Assim como o quarto, também está perfeitamente arrumado.",
+     	               "<br> Você costuma brincar que é um banheiro minimalista, que só existe pra poder chamar o quarto de suíte. Assim como o quarto, também está perfeitamente arrumado.",
      	"answers": [
      	 {
      	   "title": "Olhar no espelho",
@@ -88,7 +98,7 @@ Os objetos do array answers possuem três atributos: title (nome que será impre
      	   "add":"Você olha e não se lembra se tomou banho antes de dormir. Por segurança, você verifica se tá com cc, mas na real tá com um cheiro gostoso de banho recem tomado. <br>Hum, o box está completamente seco, que estranho."
          },{
      	   "title": "Voltar para o quarto",
-     	   "target": 2,
+     	   "target": 0,
      	   "add":""
          }
         ]
@@ -120,6 +130,8 @@ var complement = "";
 
 
 window.printContent = function() {
+	document.getElementById("header").innerHTML= db[node].title;
+
 	if (complement == ""){
 		document.getElementById("descriptionDiv").innerHTML =
     db[node].description + "<br><br>" + "O que você quer fazer agora?";
