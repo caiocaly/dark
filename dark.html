@@ -9,6 +9,11 @@
 </head>
 
 <body>
+
+<div class="tooltip">Hover over me
+  <span class="tooltiptext">Tooltip text</span>
+</div>
+
 <div header>
 	<h1>Título do jogo</h1>
 </div>
@@ -31,11 +36,11 @@ Os objetos do array answers possuem três atributos: title (nome que será impre
     " Você se dá conta que seu braço está estendido e seu dedo sobre o interruptor.",
 
     "answers": [{
-      "title": "Ligo as luzes",
+      "title": "Ligar as luzes",
       "target": 1,
       "add" : ""
     }, {
-      "title": "Choro",
+      "title": "Chorar",
       "target": 0,
       "add" : "Você chora um pouquinho (meio sem saber porquê), mas logo pára e se recompõe. Você se assusta fácil, né?"
     }]
@@ -148,7 +153,7 @@ pressButton = function(x){
 complement = db[node].answers[x].add; 
 window.goTo(db[node].answers[x].target);
 }
-</script>
 
+</script>
   </body>
 </html>
