@@ -5,9 +5,8 @@ var quarto = {
 	decima: "sério, é só o quarto..."
 }
 
-quarto = function () {
-		printContent (quarto, 'primeira', 'add' );
-}
+
+
 
 printContent = function (targetRoom, targetState, printType){
 	if (printType == 'add') {
@@ -18,6 +17,11 @@ printContent = function (targetRoom, targetState, printType){
 	  document.getElementById('main').innerHTML = "<p>" + targetRoom[targetState] + "</p>";
 	}
 }
+
+Quarto = function () {
+		printContent (quarto, 'primeira', 'add' );
+	}
+
 
 testContent = function () {
 	//document.getElementById('teste').innerHTML = 'Oi';
