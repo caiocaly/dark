@@ -1,8 +1,9 @@
 var quarto = {
 	visitas: 0,
-	primeira: "Testando isso, bem vindo ao Quarto!",
-	seguintes: "É só o quarto",
-	decima: "sério, é só o quarto..."
+	primeira: `<p> É o seu quarto. Ele está bem arrumadinho, até a cama está feita. </p>
+	<p> É pequeno, mas aconchegante...	Olhar pra ele assim com atenção faz você lembrar de como gosta dele...<br> Mas também parece que tem alguma coisa errada, 
+	mesmo que você não saiba exatamente o quê é...</p>`,
+	decima: `<p> Quanto mais tempo cê passa aqui, mais estranho tudo parece... </p>`
 }
 
 printContent = function (targetRoom, targetState, printType){
@@ -15,13 +16,12 @@ printContent = function (targetRoom, targetState, printType){
 }
 
 Quarto = function () {
-	if (quarto.visitas == 0) {
 		printContent (quarto, 'primeira', 'replace' );
-	} else if (4 > quarto.visitas > 0) {
-		printContent (quarto, 'seguintes', 'replace');
-	} else {
+
+		if (quarto.visitas > 3) {
 		printContent (quarto, 'decima', 'add');
-	}
+		}
+	
 
 	quarto.visitas ++;
 }
