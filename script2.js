@@ -3,8 +3,16 @@ var quarto = {
 	apagado: "tudo escuro kkk"
 }
 
-printContent = function (targetRoom, targetState){
-	document.getElementById('main').innerHTML = targetRoom.targetState;
+printContent = function (targetRoom, targetState, printType){
+	if (printType == 'add') {
+
+	  document.getElementById('main').innerHTML += "<p>" + targetRoom[targetState] + "</p>";
+
+
+	
+	} else if (printType == 'replace') {
+	  document.getElementById('main').innerHTML = "<p>" + targetRoom[targetState] + "</p>";
+	}
 }
 
 testContent = function () {
