@@ -5,9 +5,6 @@ var quarto = {
 	decima: "sério, é só o quarto..."
 }
 
-
-
-
 printContent = function (targetRoom, targetState, printType){
 	if (printType == 'add') {
 
@@ -19,11 +16,15 @@ printContent = function (targetRoom, targetState, printType){
 }
 
 Quarto = function () {
+	
 	if (quarto.visitas == 0) {
 		printContent (quarto, 'primeira', 'replace' );
-	} else {
+	} else if (4 > quarto.visitas > 0) {
 		printContent (quarto, 'seguintes', 'replace');
+	} else {
+		printContent (quarto, 'decima', 'replace');
 	}
+
 	quarto.visitas ++;
 
 }
