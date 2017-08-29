@@ -7,31 +7,21 @@ var quarto = {
 
 printContent = function (targetRoom, targetState, printType){
 	if (printType == 'add') {
+		document.getElementById('main').innerHTML += "<p>" + targetRoom[targetState] + "</p>";
 
-	  document.getElementById('main').innerHTML += "<p>" + targetRoom[targetState] + "</p>";
-	
 	} else if (printType == 'replace') {
-	  document.getElementById('main').innerHTML = "<p>" + targetRoom[targetState] + "</p>";
+		document.getElementById('main').innerHTML = "<p>" + targetRoom[targetState] + "</p>";
 	}
 }
 
 Quarto = function () {
-	
 	if (quarto.visitas == 0) {
 		printContent (quarto, 'primeira', 'replace' );
 	} else if (4 > quarto.visitas > 0) {
 		printContent (quarto, 'seguintes', 'replace');
 	} else {
-		printContent (quarto, 'decima', 'replace');
+		printContent (quarto, 'decima', 'add');
 	}
 
 	quarto.visitas ++;
-
 }
-
-
-testContent = function () {
-	//document.getElementById('teste').innerHTML = 'Oi';
-	 document.getElementById('main').innerHTML = quarto.padrao;
-}
-
