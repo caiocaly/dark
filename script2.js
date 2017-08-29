@@ -19,8 +19,14 @@ printContent = function (targetRoom, targetState, printType){
 }
 
 Quarto = function () {
-		printContent (quarto, 'primeira', 'add' );
+	if (quarto.visitas == 0) {
+		printContent (quarto, 'primeira', 'replace' );
+	} else {
+		printContent (quarto, 'seguintes', 'replace');
 	}
+	quarto.visitas ++;
+
+}
 
 
 testContent = function () {
